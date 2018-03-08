@@ -21,11 +21,11 @@ public class MyApp {
     reCount.thenAccept(System.out::println);
 
     CompletableFuture<Integer> count = tweetsProcess.returnCount("#bell");
-    CompletableFuture<String> countTweet = count.thenApply(name -> "Hello " + name);
+    CompletableFuture<String> countTweet = count.thenApply(name -> "Count is:" + name);
     countTweet.thenAccept(System.out::println);
 
     CompletableFuture<List<String>> tweets = tweetsProcess.returnTweets("#bell");
-    CompletableFuture<String> tweet = tweets.thenApply(name -> "Hello " + name);
+    CompletableFuture<String> tweet = tweets.thenApply(name -> "Tweets are:" + name);
     tweet.thenAccept(System.out::println);
 
 
