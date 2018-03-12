@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class MyApp {
-  public static void main(String args[]) {
+  public static void main(String args[]) throws InterruptedException {
 
     TweetsProcessor tweetsProcess = new TweetsProcessor();
     CompletableFuture<Double> averageCount = tweetsProcess.returnAverageCount("#bell");
@@ -28,6 +28,6 @@ public class MyApp {
     CompletableFuture<String> tweet = tweets.thenApply(name -> "Tweets are:" + name);
     tweet.thenAccept(System.out::println);
 
-
+    Thread.sleep(100000);
   }
 }
